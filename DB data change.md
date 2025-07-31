@@ -52,4 +52,36 @@ mongosh
 ### Step 5: Run this in mongo Shell
 rs.initiate() 
 
-This simplified version provides only the steps with the relevant commands.
+## **For Docker**
+
+### Step 1: Install Docker In Your OS
+
+### Step 2: Run Mongodb Container With This Command
+
+```bash
+docker run -d \
+  --name mongodb \
+  -p 27017:27017 \
+  -v /var/lib/mongodb:/data/db \
+  mongo \
+  mongod --replSet rs0 --bind_ip_all
+```
+
+### Step 3: Enter Mongodb Docker Container
+
+```bash
+docker exec -it mongodb /bin/bash
+```
+
+### Step 4: Enter Mongo Shell
+
+```bash
+mongosh
+```
+
+### Step 5: Run This In Mongo Shell
+
+```bash
+rs.initiate()
+```
+ 
