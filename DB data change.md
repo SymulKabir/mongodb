@@ -8,26 +8,26 @@ Here is the version with just the steps and the necessary run commands:
 net stop MongoDB
 ```
 
-### Step 2: Edit `mongod.cfg` File (C:\Program Files\MongoDB\Server\<your-version>\bin\mongod.cfg)
+#### Step 2: Edit `mongod.cfg` File (C:\Program Files\MongoDB\Server\<your-version>\bin\mongod.cfg)
 
 ```bash
   replication:
     replSetName: "rs0" 
 ```
 
-### Step 3: Start MongoDB Service 
+#### Step 3: Start MongoDB Service 
 
 ```bash
 net start MongoDB 
 ```
 
-### Step 4: Initialize Replica Set 
+#### Step 4: Initialize Replica Set 
 
 ```bash
 mongosh
 ``` 
 
-### Step 5: Run this in mongo Shell
+#### Step 5: Run this in mongo Shell
 
 ```bash
 rs.initiate() 
@@ -35,19 +35,19 @@ rs.initiate()
 
 ## When Data Cahange to Get Old Data and New Data Together in Change Stream (Advance and Optional)
 
-### Step 6: Initialize Replica Set Again
+#### Step 6: Initialize Replica Set Again
 ```bash
 mongoose
 ```
 
 
-### Step 7: Select Database
+#### Step 7: Select Database
 
 ```bash
 Use “DB_NAME”
 ```
 
-### Step 7: Run changeStreamPreAndPostImages Engable Command
+#### Step 7: Run changeStreamPreAndPostImages Engable Command
 
 ```bash
 db.runCommand({
@@ -69,7 +69,7 @@ Output —>>
   operationTime: Timestamp({ t: 1756292772, i: 1 })
 }
 
-### Step 7: Now Go To Code Editor (VS Code) and Write the Code
+#### Step 7: Now Go To Code Editor (VS Code) and Write the Code
 
 ```bash
 const changeStream = Collection.watch([], {
@@ -90,32 +90,32 @@ changeStream.on("change", (change) => {
 
 ## **For Linux**
 
-### Step 1: Stop MongoDB Service 
+#### Step 1: Stop MongoDB Service 
 
 ```bash
 sudo systemctl stop mongod 
 ```
 
-### Step 2: Edit `mongod.cfg` File (/etc/mongod.conf)
+#### Step 2: Edit `mongod.cfg` File (/etc/mongod.conf)
 
 ```bash
 replication:
     replSetName: "rs0"
 ```
 
-### Step 3: Start MongoDB Service 
+#### Step 3: Start MongoDB Service 
 
 ```bash
 sudo systemctl start mongod 
 ```
 
-### Step 4: Initialize Replica Set 
+#### Step 4: Initialize Replica Set 
 
 ```bash
 mongosh
 ```
 
-### Step 5: Run this in mongo Shell
+#### Step 5: Run this in mongo Shell
 
 ```bash
 rs.initiate() 
@@ -123,19 +123,19 @@ rs.initiate()
 
 ## When Data Cahange to Get Old Data and New Data Together in Change Stream (Advance and Optional)
 
-### Step 6: Initialize Replica Set Again
+#### Step 6: Initialize Replica Set Again
 ```bash
 mongoose
 ```
 
 
-### Step 7: Select Database
+#### Step 7: Select Database
 
 ```bash
 Use “DB_NAME”
 ```
 
-### Step 7: Run changeStreamPreAndPostImages Engable Command
+#### Step 7: Run changeStreamPreAndPostImages Engable Command
 
 ```bash
 db.runCommand({
@@ -157,7 +157,7 @@ Output —>>
   operationTime: Timestamp({ t: 1756292772, i: 1 })
 }
 
-### Step 7: Now Go To Code Editor (VS Code) and Write the Code
+#### Step 7: Now Go To Code Editor (VS Code) and Write the Code
 
 ```bash
 const changeStream = Collection.watch([], {
@@ -176,51 +176,51 @@ changeStream.on("change", (change) => {
 
 ## **For macOS**
 
-### Step 1: Stop MongoDB Service 
+#### Step 1: Stop MongoDB Service 
 
 ```bash
 brew services stop mongodb
 ```
 
-### Step 2: Edit `mongod.cfg` File (/usr/local/etc/mongod.conf or /opt/homebrew/etc/mongod.conf)
+#### Step 2: Edit `mongod.cfg` File (/usr/local/etc/mongod.conf or /opt/homebrew/etc/mongod.conf)
 
 ```bash
 replication:
   replSetName: "rs0"
 ```
 
-### Step 3: Start MongoDB Service 
+#### Step 3: Start MongoDB Service 
 
 ```bash
 brew services start mongodb
 ```
 
-### Step 4: Initialize Replica Set 
+#### Step 4: Initialize Replica Set 
 
 ```bash
 mongosh 
 ```
 
-### Step 5: Run this in mongo Shell
+#### Step 5: Run this in mongo Shell
 ```bash
 rs.initiate() 
 ```
 
 ## When Data Cahange to Get Old Data and New Data Together in Change Stream (Advance and Optional)
 
-### Step 6: Initialize Replica Set Again
+#### Step 6: Initialize Replica Set Again
 ```bash
 mongoose
 ```
 
 
-### Step 7: Select Database
+#### Step 7: Select Database
 
 ```bash
 Use “DB_NAME”
 ```
 
-### Step 7: Run changeStreamPreAndPostImages Engable Command
+#### Step 7: Run changeStreamPreAndPostImages Engable Command
 
 ```bash
 db.runCommand({
@@ -242,7 +242,7 @@ Output —>>
   operationTime: Timestamp({ t: 1756292772, i: 1 })
 }
 
-### Step 7: Now Go To Code Editor (VS Code) and Write the Code
+#### Step 7: Now Go To Code Editor (VS Code) and Write the Code
 
 ```bash
 const changeStream = Collection.watch([], {
@@ -261,9 +261,9 @@ changeStream.on("change", (change) => {
 
 ## **For Docker**
 
-### Step 1: Install Docker In Your OS
+#### Step 1: Install Docker In Your OS
 
-### Step 2: Run Mongodb Container With This Command
+#### Step 2: Run Mongodb Container With This Command
 
 ```bash
 docker run -d \
@@ -274,19 +274,19 @@ docker run -d \
   mongod --replSet rs0 --bind_ip_all
 ```
 
-### Step 3: Enter Mongodb Docker Container
+#### Step 3: Enter Mongodb Docker Container
 
 ```bash
 docker exec -it mongodb /bin/bash
 ```
 
-### Step 4: Enter Mongo Shell
+#### Step 4: Enter Mongo Shell
 
 ```bash
 mongosh
 ```
 
-### Step 5: Run This In Mongo Shell
+#### Step 5: Run This In Mongo Shell
 
 ```bash
 rs.initiate()
