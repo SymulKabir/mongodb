@@ -1,5 +1,7 @@
 Here is the version with just the steps and the necessary run commands:
 
+## **For Linux**
+
 ### Step 1: Stop MongoDB Service 
 net stop MongoDB 
 
