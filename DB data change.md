@@ -9,22 +9,26 @@ net stop MongoDB
 ```
 
 ### Step 2: Edit `mongod.cfg` File (C:\Program Files\MongoDB\Server\<your-version>\bin\mongod.cfg)
+
 ```bash
   replication:
     replSetName: "rs0" 
 ```
 
 ### Step 3: Start MongoDB Service 
+
 ```bash
 net start MongoDB 
 ```
 
 ### Step 4: Initialize Replica Set 
+
 ```bash
 mongosh
 ``` 
 
 ### Step 5: Run this in mongo Shell
+
 ```bash
 rs.initiate() 
 ```
@@ -87,38 +91,67 @@ changeStream.on("change", (change) => {
 ## **For Linux**
 
 ### Step 1: Stop MongoDB Service 
+
+```bash
 sudo systemctl stop mongod 
+```
 
 ### Step 2: Edit `mongod.cfg` File (/etc/mongod.conf)
+
+```bash
 replication:
     replSetName: "rs0"
+```
 
 ### Step 3: Start MongoDB Service 
+
+```bash
 sudo systemctl start mongod 
+```
 
 ### Step 4: Initialize Replica Set 
-mongosh 
+
+```bash
+mongosh
+```
 
 ### Step 5: Run this in mongo Shell
+
+```bash
 rs.initiate() 
+```
 
 ## **For macOS**
 
 ### Step 1: Stop MongoDB Service 
+
+```bash
 brew services stop mongodb
+```
 
 ### Step 2: Edit `mongod.cfg` File (/usr/local/etc/mongod.conf or /opt/homebrew/etc/mongod.conf)
+
+```bash
 replication:
   replSetName: "rs0"
+```
 
 ### Step 3: Start MongoDB Service 
+
+```bash
 brew services start mongodb
+```
 
 ### Step 4: Initialize Replica Set 
+
+```bash
 mongosh 
+```
 
 ### Step 5: Run this in mongo Shell
+```bash
 rs.initiate() 
+```
 
 ## **For Docker**
 
