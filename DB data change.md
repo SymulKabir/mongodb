@@ -2,7 +2,7 @@ Here is the version with just the steps and the necessary run commands:
 
 ## **For Windows**
 
-### Step 1: Stop MongoDB Service 
+#### Step 1: Stop MongoDB Service 
 
 ```bash
 net stop MongoDB
