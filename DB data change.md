@@ -51,7 +51,7 @@ Use “DB_NAME”
 
 ```bash
 db.runCommand({
-  collMod: “COLLECTION_NAME”,
+  collMod: "COLLECTION_NAME",
   changeStreamPreAndPostImages: { enabled: true }
 })
 ```
@@ -139,7 +139,7 @@ Use “DB_NAME”
 
 ```bash
 db.runCommand({
-  collMod: “COLLECTION_NAME”,
+  collMod: "COLLECTION_NAME",
   changeStreamPreAndPostImages: { enabled: true }
 })
 ```
@@ -224,7 +224,7 @@ Use “DB_NAME”
 
 ```bash
 db.runCommand({
-  collMod: “COLLECTION_NAME”,
+  collMod: "COLLECTION_NAME",
   changeStreamPreAndPostImages: { enabled: true }
 })
 ```
