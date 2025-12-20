@@ -292,3 +292,74 @@ mongosh
 rs.initiate()
 ```
  
+## **For Kubernetes**
+
+#### Create MongoDB Deployment with Replica Set
+`mongo-deployment.yaml`
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:7.0
+        args:
+          - "--replSet"
+          - "rs0"
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongo-vol
+      volumes:
+      - name: mongo-vol
+        persistentVolumeClaim:
+          claimName: mongo-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - port: 27017
+      targetPort: 27017
+
+```
+```bash
+kubectl apply -f mongo-deployment.yaml
+```
+
+#### Initialize Replica Set Inside Pod
+```bash
+kubectl exec -it <mongodb-pod-name> -- mongosh
+```
+
+```rs0 [direct: primary] test>
+
+cfg = rs.conf()
+cfg.members[0].host = "mongodb-service:27017"
+rs.reconfig(cfg, { force: true })
+```
+
+
+
+
+
+
+
+
+
