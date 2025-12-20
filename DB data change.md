@@ -348,7 +348,7 @@ kubectl apply -f mongo-deployment.yaml
 kubectl exec -it <mongodb-pod-name> -- mongosh
 ```
 
-```rs0 [direct: primary] test>
+```mongo shell
 
 cfg = rs.conf()
 cfg.members[0].host = "mongodb-service:27017"
