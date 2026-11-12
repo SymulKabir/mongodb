@@ -360,7 +360,7 @@ cfg = rs.conf()
 cfg.members[0].host = "mongodb-service:27017"
 rs.reconfig(cfg, { force: true })
 ```
-
+If this command are execute with error, then restart then restart deployment and run this again
 
 
 
