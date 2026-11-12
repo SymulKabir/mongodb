@@ -347,6 +347,12 @@ kubectl apply -f mongo-deployment.yaml
 ```bash
 kubectl exec -it <mongodb-pod-name> -- mongosh
 ```
+#### Run This In Mongo Shell
+
+```bash
+rs.initiate()
+```
+Then Run This
 
 ```mongosh
 
